@@ -1,4 +1,44 @@
 # 🤖 MARK XXXIX-OR (39)
+
+## Full Installation guide
+sudo nano /etc/apt/sources.list
+deb http://vn.archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+deb http://vn.archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://vn.archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb http://security.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
+
+Check python version 
+python --version
+which python
+
+
+install package
+sudo apt update
+
+
+sudo apt install zlib1g-dev
+
+sudo apt install -y \
+  build-essential \
+  curl \
+  git \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libffi-dev \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  liblzma-dev \
+  uuid-dev
+
+
+
 ### The Ultimate Cross-Platform Personal AI Assistant — By FatihMakes
 
 > 📺 **[Watch the full setup video on YouTube](https://youtu.be/ldvDNzwnM8k)**
