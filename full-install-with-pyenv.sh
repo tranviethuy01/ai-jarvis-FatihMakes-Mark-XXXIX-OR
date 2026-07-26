@@ -70,5 +70,7 @@ source .venv/bin/activate
 #echo "Then install Playwright:"
 #
 #python -m playwright install
+# install playwright deps
+# python -m playwright install-deps
 #run 
 # python main.py
