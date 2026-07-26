@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+echo "======================================="
+echo " AI Jarvis Linux Installer"
+echo "======================================="
+
+
 echo "Check python3"
 
 python3 --version
@@ -11,6 +19,11 @@ echo "install pip"
 sudo apt update
 sudo apt install python3-pip
 
+# -----------------------------
+# Install system packages
+# -----------------------------
+#
+#
 echo "install full python development packages"
 
 sudo apt install \
@@ -53,15 +66,46 @@ sudo apt install -y \
     libportaudiocpp0
 
 
-
+# -----------------------------
+# Install pyenv
+# -----------------------------
+#
 echo "install whole python3.11.13 with pyenv, not use system Python"
-curl https://pyenv.run | bash
-pyenv install 3.11.13
+#curl https://pyenv.run | bash
+if [ ! -d "$HOME/.pyenv" ]; then
+    echo "Installing pyenv..."
+    curl https://pyenv.run | bash
+fi
+
+# -----------------------------
+# Configure pyenv
+# -----------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init -)"
+
+echo "install 3.11.13 and set this folder to use 3.11.13"
+#pyenv install 3.11.13
+if ! pyenv versions --bare | grep -q "^3.11.13$"; then
+    pyenv install 3.11.13
+fi
+
 pyenv local 3.11.13
 
+echo "Check Python:"
+which python
+python --version
+
+
+# -----------------------------
+# Create virtual environment
+# -----------------------------
+rm -rf .venv
 python -m venv .venv
 source .venv/bin/activate
 
+#python -m pip install --upgrade pip setuptools wheel
 
 
 #echo "Install requirements manually:"

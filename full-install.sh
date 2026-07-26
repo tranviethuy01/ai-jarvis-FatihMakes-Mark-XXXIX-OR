@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+echo "======================================="
+echo " AI Jarvis Linux Installer"
+echo "======================================="
+
+
 echo "Check python3"
 
 python3 --version
@@ -11,6 +19,11 @@ echo "install pip"
 sudo apt update
 sudo apt install python3-pip
 
+# -----------------------------
+# Install system packages
+# -----------------------------
+#
+#
 echo "install full python development packages"
 
 sudo apt install \
@@ -54,12 +67,14 @@ sudo apt install -y \
     libportaudiocpp0
 
 
-
+# -----------------------------
+# Create virtual environment
+# -----------------------------
 echo "create virtual environment"
-
+rm -rf .venv
 python3 -m venv .venv
-
 source .venv/bin/activate
+#python -m pip install --upgrade pip setuptools wheel
 
 #echo "Install requirements manually:"
 #pip install -r requirements.txt
