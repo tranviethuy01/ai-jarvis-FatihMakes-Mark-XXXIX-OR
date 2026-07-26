@@ -45,6 +45,13 @@ sudo apt install -y \
   liblzma-dev \
   uuid-dev
 
+#audio 
+sudo apt install -y \
+    portaudio19-dev \
+    libasound2-dev \
+    libjack-jackd2-dev \
+    libportaudiocpp0
+
 
 
 echo "install whole python3.11.13 with pyenv, not use system Python"
@@ -63,4 +70,5 @@ source .venv/bin/activate
 #echo "Then install Playwright:"
 #
 #python -m playwright install
-
+#run 
+# python main.py

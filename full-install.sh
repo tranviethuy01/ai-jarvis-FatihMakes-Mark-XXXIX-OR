@@ -45,6 +45,16 @@ sudo apt install -y \
   liblzma-dev \
   uuid-dev
 
+
+#audio 
+sudo apt install -y \
+    portaudio19-dev \
+    libasound2-dev \
+    libjack-jackd2-dev \
+    libportaudiocpp0
+
+
+
 echo "create virtual environment"
 
 python3 -m venv .venv
@@ -57,4 +67,5 @@ source .venv/bin/activate
 #echo "Then install Playwright:"
 #
 #python -m playwright install
-
+#run 
+# python main.py

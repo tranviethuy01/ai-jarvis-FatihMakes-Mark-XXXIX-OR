@@ -38,6 +38,13 @@ sudo apt install -y \
   uuid-dev
 
 
+audio:
+sudo apt install -y \
+    portaudio19-dev \
+    libasound2-dev \
+    libjack-jackd2-dev \
+    libportaudiocpp0
+
 
 ### The Ultimate Cross-Platform Personal AI Assistant — By FatihMakes
 
